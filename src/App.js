@@ -5,7 +5,7 @@ export default function App() {
 	const questions = [
 		{
 			questionText: 'Что поет Кайрош в этом моменте?',
-			img: "https://iili.io/wGFO22.png",
+			img: "./images/shashlyk.jpeg",
 			answerOptions: [
 				{ answerText: 'Гаражым-ай', isCorrect: false },
 				{ answerText: 'Шашлыгым-ей', isCorrect: false },
@@ -102,13 +102,12 @@ export default function App() {
 	const [timer, setTimer] = useState('00:00:00');
 	const [shake, setShake] = useState(false);
 	const audio = new Audio(music);
-  
-	useEffect(() => {
-		audio.play()
-	  },
-	  []
-	);
-
+	// const [audio, SetAudio] = useState("");
+	const Playit = () => {
+		var audio = new Audio(music);
+		audio.play();
+	}
+	useEffect(() => {Playit()}, []);
 
 	const animate = () => {
         
